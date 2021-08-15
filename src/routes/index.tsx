@@ -10,7 +10,6 @@ import SideDrawer from "../components/Drawer/SideDrawer";
 import Home from "../pages/Home";
 import Axios from "axios";
 import Signup from "./../pages/Signup";
-import Login from "./../pages/Login";
 
 interface RouteInfoProps extends RouteProps {
   title?: string;
@@ -29,11 +28,6 @@ export const routeInfo: RouteInfoProps[] = [
     path: "/signup",
     title: "Sign Up",
     component: Signup,
-  },
-  {
-    path: "/login",
-    title: "Log In",
-    component: Login,
   },
 ];
 
