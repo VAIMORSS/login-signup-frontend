@@ -11,10 +11,11 @@ async function jwtCheck(e: any) {
 }
 
 export default class Api implements ApiType {
-    baseUrl = "http://localhost:4000";
+    baseUrl = "http://localhost:4000/api/v1";
 
     constructor(baseUrl: string) {
         this.baseUrl = baseUrl;
+
     }
 
     async get(url: string) {
@@ -37,7 +38,7 @@ export default class Api implements ApiType {
 
     async post(url: string, payload: any) {
         try {
-            const response = await Axios.post(url, payload);
+            const response = await Axios.post(url, payload, { withCredentials: true, });
             const error = this.extractError(response);
             return { data: response.data, error: error };
         } catch (e) {
