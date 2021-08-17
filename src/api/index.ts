@@ -10,7 +10,7 @@ export enum endpoints {
 
 
 export default class Main implements MainType {
-    api = new Api('https://myeffect-bk.herokuapp.com/api/v1/');
+    api = new Api('http://localhost:4000/api/v1');
     user = new User(this.api, endpoints.users);
     auth = new Auth(this.api, endpoints.auth)
 }
